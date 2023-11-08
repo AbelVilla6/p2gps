@@ -37,10 +37,10 @@ jobs:
       #...
     - name: dockerizar el front y el backend
       run: |
-          cp src/Clients/build/libs/*.war deploy/docker/Clients/drop #copiar el resultado del build para la nueva imagen
-          docker build -t p2gps/web deploy/docker/Clients
-          cp src/Backend/OrderService/build/libs/ordering* deploy/docker/Order/drop #copiar el resultado del build para la nueva imagen
-          docker build -t p2gps/order deploy/docker/Order
+        cp src/Clients/build/libs/*.war deploy/docker/Clients/drop #copiar el resultado del build para la nueva imagen
+        docker build -t p2gps/web deploy/docker/Clients
+        cp src/Backend/OrderService/build/libs/ordering* deploy/docker/Order/drop #copiar el resultado del build para la nueva imagen
+        docker build -t p2gps/order deploy/docker/Order
 
     ### SUBIR IMÁGENES A DOCKERHUB #####
 
@@ -57,5 +57,5 @@ jobs:
 
     - name: Push a DockerHub
       run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/p2gps:order
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/p2gps:web
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/p2gps:order
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/p2gps:web
