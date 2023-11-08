@@ -1,6 +1,6 @@
 FROM tomcat:7-jre8
 
-MAINTAINER abel.ortiz1@alu.uclm.es
+MAINTAINER darkaov@gmail.com
 
 COPY drop/* /usr/local/tomcat/webapps/
 
